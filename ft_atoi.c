@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 15:12:58 by atep              #+#    #+#             */
-/*   Updated: 2018/11/28 15:36:34 by atep             ###   ########.fr       */
+/*   Created: 2018/08/06 15:42:46 by atep              #+#    #+#             */
+/*   Updated: 2018/11/28 17:14:09 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int		ft_atoi(const char *str)
 {
-	unsigned int i;
+	int i;
+	int a;
+	int r;
 
 	i = 0;
-	if (s && f)
+	a = 1;
+	r = 0;
+	while (str[i] == 32 || (str[i] >= 8 && str[i] <= 13))
+		i++;
+	if (str[i] == 45)
+		a = -1;
+	if (str[i] == 43 || str[i] == 45)
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		while (*s)
-		{
-			f(i, s);
-			i++;
-			s++;
-		}
+		r = r * 10 + (int)str[i] - 48;
+		i++;
 	}
+	return (a * r);
 }

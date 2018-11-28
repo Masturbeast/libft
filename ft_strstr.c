@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 15:12:58 by atep              #+#    #+#             */
-/*   Updated: 2018/11/28 15:36:34 by atep             ###   ########.fr       */
+/*   Created: 2018/08/09 11:11:51 by atep              #+#    #+#             */
+/*   Updated: 2018/11/21 16:14:59 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	unsigned int i;
+	int i;
+	int j;
 
 	i = 0;
-	if (s && f)
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		while (*s)
-		{
-			f(i, s);
-			i++;
-			s++;
-		}
+		j = 0;
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+			j++;
+		if (to_find[j] == '\0')
+			return (str + i);
+		i++;
 	}
+	return (0);
 }

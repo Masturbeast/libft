@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 15:12:58 by atep              #+#    #+#             */
-/*   Updated: 2018/11/28 15:36:34 by atep             ###   ########.fr       */
+/*   Created: 2018/11/08 14:44:14 by atep              #+#    #+#             */
+/*   Updated: 2018/11/12 18:56:04 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int		ft_toupper(int c)
 {
-	unsigned int i;
-
-	i = 0;
-	if (s && f)
-	{
-		while (*s)
-		{
-			f(i, s);
-			i++;
-			s++;
-		}
-	}
+	if (ft_islower(c))
+		c = c - 32;
+	return (c);
 }
