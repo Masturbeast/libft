@@ -6,13 +6,13 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/05 19:38:45 by atep              #+#    #+#             */
-/*   Updated: 2018/11/21 15:56:49 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/06 14:44:44 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(char *str)
+size_t		ft_strlen(const char *str)
 {
 	int a;
 

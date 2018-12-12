@@ -6,7 +6,7 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 17:40:38 by atep              #+#    #+#             */
-/*   Updated: 2018/11/21 16:09:09 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/12 16:55:59 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	j = 0;
 	if (src[j] == '\0')
 		return (dest);
-	while (j < n)
+	while (src[j] != '\0' && j < n)
 	{
 		dest[i] = src[j];
 		i++;

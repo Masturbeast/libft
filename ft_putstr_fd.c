@@ -6,16 +6,16 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:43:04 by atep              #+#    #+#             */
-/*   Updated: 2018/11/28 17:29:29 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/06 15:01:27 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	int i;
-	
+
 	i = 0;
 	while (s[i] != '\0')
 	{

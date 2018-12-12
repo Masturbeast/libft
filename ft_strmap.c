@@ -6,7 +6,7 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 16:52:55 by atep              #+#    #+#             */
-/*   Updated: 2018/11/28 15:06:12 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/06 15:07:33 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmap(char	const *s, char (*f)(char))
 {
-	char 	*strnew;
+	char	*strnew;
 	int		i;
 	int		slen;
 

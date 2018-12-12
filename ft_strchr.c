@@ -6,7 +6,7 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 20:31:38 by atep              #+#    #+#             */
-/*   Updated: 2018/11/13 22:48:30 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/12 16:41:23 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *str, int c)
 	while (*t && *t != (char)c)
 		t++;
 	if (*t == (char)c)
-		return ((char *)str);
+		return (t);
 	else
 		return (NULL);
 }

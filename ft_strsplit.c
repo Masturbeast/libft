@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/12/06 15:03:25 by atep              #+#    #+#             */
+/*   Updated: 2018/12/06 16:09:05 by atep             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static size_t	ft_nb_line_tab(char const *s, char c)
+static size_t	ft_nb_line(char const *s, char c)
 {
 	size_t	i;
 	size_t	n;
@@ -21,7 +33,17 @@ static size_t	ft_nb_line_tab(char const *s, char c)
 	return (n);
 }
 
-char	**ft_strsplit(char const *s, char c)
+void			*ft_malloc(char const *s, char c)
+{
+	char **res;
+
+	res = (char **)malloc(sizeof(char *) * (ft_nb_line(s, c) + 1));
+	if (res == 0)
+		return (NULL);
+	return (res);
+}
+
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t	n;
 	size_t	i;
@@ -30,8 +52,7 @@ char	**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	n = 0;
-	if (!(res = (char**)malloc(sizeof(char*) * (ft_nb_line_tab(s, c) + 1))))
-		return (NULL);
+	res = ft_malloc(s, c);
 	while (s && s[i])
 	{
 		while (s[i] && s[i] == c)

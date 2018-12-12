@@ -6,7 +6,7 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 15:17:06 by atep              #+#    #+#             */
-/*   Updated: 2018/11/21 15:17:08 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/06 15:06:34 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_itoa_length(int n)
 {
-	size_t		len;
+	size_t			len;
 	unsigned int	nb;
 
 	len = 1;
@@ -30,11 +30,11 @@ static size_t	ft_itoa_length(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char		*res;
+	char			*res;
 	unsigned int	nb;
-	size_t		i;
+	size_t			i;
 
 	i = 1;
 	if ((res = ft_strnew(ft_itoa_length(n))) == NULL)

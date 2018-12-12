@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/21 14:57:35 by atep              #+#    #+#             */
-/*   Updated: 2018/11/21 16:30:56 by atep             ###   ########.fr       */
+/*   Created: 2018/12/06 15:13:51 by atep              #+#    #+#             */
+/*   Updated: 2018/12/06 15:15:46 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void new;
+	void *new;
 
-	new = (void*)malloc(sizeof(char) * size)
+	new = (void*)malloc(sizeof(char) * size);
 	if (new == 0)
 		return (NULL);
 	ft_bzero(new, size);
