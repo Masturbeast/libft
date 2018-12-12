@@ -6,7 +6,7 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 15:03:25 by atep              #+#    #+#             */
-/*   Updated: 2018/12/06 16:09:05 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/12 21:46:58 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,6 @@ static size_t	ft_nb_line(char const *s, char c)
 	return (n);
 }
 
-void			*ft_malloc(char const *s, char c)
-{
-	char **res;
-
-	res = (char **)malloc(sizeof(char *) * (ft_nb_line(s, c) + 1));
-	if (res == 0)
-		return (NULL);
-	return (res);
-}
-
 char			**ft_strsplit(char const *s, char c)
 {
 	size_t	n;
@@ -52,8 +42,9 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	n = 0;
-	res = ft_malloc(s, c);
-	while (s && s[i])
+	if (!(res = (char **)malloc(sizeof(char *) * (ft_nb_line(s, c) + 1))))
+		return (NULL);
+	while (s && s[i] && s != 0)
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -62,10 +53,9 @@ char			**ft_strsplit(char const *s, char c)
 			j++;
 		if (j)
 		{
-			if (!(res[n] = ft_strsub(s, (unsigned int)i, j)))
+			if (!(res[n++] = ft_strsub(s, (unsigned int)i, j)))
 				return (NULL);
-			i += j;
-			n++;
+			i = i + j;
 		}
 	}
 	res[n] = 0;

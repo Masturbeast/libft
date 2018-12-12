@@ -6,7 +6,7 @@
 /*   By: atep <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 15:28:11 by atep              #+#    #+#             */
-/*   Updated: 2018/12/06 14:50:34 by atep             ###   ########.fr       */
+/*   Updated: 2018/12/12 17:24:39 by atep             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	strnew = ft_strnew(len);
+	strnew = (char *)malloc(sizeof(char) * len + 1);
+	if (strnew == 0)
+		return (0);
 	while (i < len)
 	{
 		strnew[i] = s[start + i];
